@@ -1,0 +1,12 @@
+{
+  "name": "fullstack-react-monorepo-starter",
+  "version": "1.0.0",
+  "description": "A fullstack project based on JS stack such as react, react-native, express.js",
+  "main": "index.js",
+  "repository": "https://github.com/tomiezz/fullstack-react-monorepo-starter",
+  "author": "Tomiez",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
