@@ -1,0 +1,1 @@
+# Fullstack react monorepo starter
