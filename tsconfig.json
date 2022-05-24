@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "allowJs": true, // include js files
+    "pretty": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "baseUrl": "."
+  }
+}
