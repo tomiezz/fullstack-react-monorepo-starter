@@ -11,14 +11,17 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    tsconfigRootDir: __dirname,
+    projects: ['./tsconfig.eslint.json'],
   },
   plugins: ['prettier', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
-    'prettier',
-    'prettier/react',
+    'plugin:prettier/recommended',
     'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'airbnb',
+    'airbnb-typescript',
   ],
 };
