@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .ts,.tsx,.js,.jsx --no-error-on-unmatched-pattern",
-    "lint:fix": "eslint --ext .ts,.tsx,.js,.jsx --no-error-on-unmatched-pattern --quiet --fix",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --no-error-on-unmatched-pattern --quiet --fix",
     "prettify": "prettier --write",
     "prepare": "husky install"
   },
@@ -23,7 +23,7 @@
     "@typescript-eslint/eslint-plugin": "5.26.0",
     "@typescript-eslint/parser": "5.26.0",
     "eslint": "8.16.0",
-    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb": "18.2.1",
     "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "^2.26.0",

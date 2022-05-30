@@ -12,15 +12,25 @@ module.exports = {
       jsx: true,
     },
     tsconfigRootDir: __dirname,
-    projects: ['./tsconfig.eslint.json'],
+    project: ['./tsconfig.eslint.json', './packages/*/tsconfig.json'],
+  },
+  root: true,
+  settings: {
+    next: {
+      rootDir: 'packages/web/',
+    },
   },
   plugins: ['prettier', '@typescript-eslint'],
   extends: [
     'eslint:recommended',
-    'plugin:prettier/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'airbnb',
     'airbnb-typescript',
+    'next/core-web-vitals',
+    'plugin:prettier/recommended',
   ],
+  rules: {
+    'react/jsx-one-expression-per-line': 0,
+  },
 };
