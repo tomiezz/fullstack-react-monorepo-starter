@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
+    'react-native/react-native': true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -20,7 +21,7 @@ module.exports = {
       rootDir: 'packages/web/',
     },
   },
-  plugins: ['prettier', '@typescript-eslint'],
+  plugins: ['prettier', '@typescript-eslint', 'react', 'react-native'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -29,6 +30,7 @@ module.exports = {
     'airbnb-typescript',
     'next/core-web-vitals',
     'plugin:prettier/recommended',
+    '@react-native-community',
   ],
   rules: {
     'react/jsx-one-expression-per-line': 0,
