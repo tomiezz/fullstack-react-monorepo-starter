@@ -2,3 +2,5 @@ node_modules
 .husky
 package.json
 .eslintrc.js
+**/dist/**
+./packages/*/node_modules
