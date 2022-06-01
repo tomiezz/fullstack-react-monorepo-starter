@@ -9,6 +9,8 @@
     "pretty": true,
     "removeComments": true,
     "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "baseUrl": "."
   }
 }
