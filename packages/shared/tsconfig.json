@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "preserve",
+    "noEmit": true,
+    "baseUrl": "./src"
+  },
+  "include": ["src", "index.ts"],
+  "exclude": ["node_modules"]
+}
