@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "main": "index.ts",
   "license": "MIT",
-  "dependencies": {
-    "react": "^18.1.0",
-    "react-native": "0.68.2"
-  },
   "peerDependencies": {
     "react": "^18.1.0",
     "react-native": "0.68.2"
   },
   "devDependencies": {
+    "react": "^18.1.0",
+    "react-native": "0.68.2",
     "@types/react": "^18.0.10",
     "@types/react-native": "^0.67.7"
   }
