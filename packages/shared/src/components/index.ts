@@ -1,2 +1,2 @@
-export { default as Welcome } from 'components/Welcome';
-export { default as ProjectLabel } from 'components/ProjectLabel';
+export { default as Welcome } from '@shared/components/Welcome';
+export { default as ProjectLabel } from '@shared/components/ProjectLabel';
