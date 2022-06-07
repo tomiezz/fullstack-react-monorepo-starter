@@ -11,13 +11,17 @@
   "dependencies": {
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-native-web": "^0.17.7",
+    "@frms/shared": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "17.0.36",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
+    "babel-plugin-react-native-web": "^0.17.7",
     "eslint": "8.16.0",
-    "eslint-config-next": "12.1.6"
+    "eslint-config-next": "12.1.6",
+    "next-transpile-modules": "^9.0.0"
   }
 }
