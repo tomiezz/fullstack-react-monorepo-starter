@@ -1,16 +1,16 @@
 {
   "name": "@frms/shared",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^18.1.0",
-    "react-native": "0.68.2"
+    "react": "*",
+    "react-native": "*"
   },
   "devDependencies": {
-    "react": "^18.1.0",
-    "react-native": "0.68.2",
-    "@types/react": "^18.0.10",
-    "@types/react-native": "^0.67.7"
+    "react": "*",
+    "react-native": "*",
+    "@types/react": "*",
+    "@types/react-native": "*"
   }
 }

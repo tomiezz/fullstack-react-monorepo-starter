@@ -5,3 +5,4 @@ package.json
 **/dist/**
 ./packages/*/node_modules
 next.config.js
+metro.config.js

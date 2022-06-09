@@ -8,15 +8,16 @@
  * @format
  */
 
+import { Welcome } from '@frms/shared';
 import React from 'react';
-import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
 
 const App = () => {
   return (
     <SafeAreaView>
       <StatusBar />
       <View style={styles.root}>
-        <Text>Welcome to Fullstack react monorepo starter</Text>
+        <Welcome />
       </View>
     </SafeAreaView>
   );
