@@ -1,0 +1,19 @@
+image: docker:20
+services:
+  - docker:dind
+stages:
+  - prepare
+  - build
+  - deploy
+
+prepare_base_img:
+  stage: prepare
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev" || $CI_COMMIT_BRANCH == "stag" || $CI_COMMIT_TAG
+      changes:
+        - "package.json"
+  variables:
+    CURRENT_IMG_NAME_PREFIX: "${CI_REGISTRY_IMAGE}/teamache_base"
+  script:
+    - chmod +x ./build/scripts/build-img.sh
+    - ./build/scripts/build-img.sh
