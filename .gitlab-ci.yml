@@ -6,12 +6,14 @@ stages:
   - build
   - deploy
 
-before_script:
-  - docker version
-  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+.docker_authentication:
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
 prepare_base_img:
   stage: prepare
+  extends:
+    - .docker_authentication
   rules:
     - if: $CI_COMMIT_BRANCH == "dev" || $CI_COMMIT_BRANCH == "stag" || $CI_COMMIT_TAG
       changes:
