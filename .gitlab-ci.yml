@@ -15,7 +15,7 @@ prepare_base_img:
         - "packages/*/package.json"
   variables:
     CURRENT_IMG_NAME: "${CI_REGISTRY_IMAGE}/frms-base"
-    DOCKER_FILE_PATH: "Dockerfile"
+    DOCKER_FILE_PATH: "./docker/Dockerfile.base"
   script:
     - chmod +x ./build/scripts/build-img.sh
     - ./build/scripts/build-img.sh
