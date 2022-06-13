@@ -21,4 +21,4 @@ if [ ! -z "$CI_COMMIT_TAG" ]; then
     IMG_NAME_BY_ENV="$CURRENT_IMG_NAME/tag"
 fi
 
-build_image $CURRENT_IMG_NAME $CURRENT_TAG
+build_image $IMG_NAME_BY_ENV $CURRENT_TAG
