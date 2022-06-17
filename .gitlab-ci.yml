@@ -6,6 +6,9 @@ stages:
   - build
   - deploy
 
+variables:
+  BASE_IMG_NAME: "frms-base"
+
 .docker_authentication:
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
@@ -26,7 +29,7 @@ prepare_base_img:
         - "package.json"
         - "packages/*/package.json"
   variables:
-    CURRENT_IMG_NAME: "${CI_REGISTRY_IMAGE}/frms-base/${CURRENT_ENV}"
+    IMG_NAME: "${CI_REGISTRY_IMAGE}/${BASE_IMG_NAME}"
     DOCKER_FILE_PATH: "./docker/Dockerfile.base"
   script:
     - chmod +x ./scripts/build-img.sh
