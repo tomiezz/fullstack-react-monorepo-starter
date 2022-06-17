@@ -22,6 +22,10 @@ module.exports = withTM({
       'react-native-web',
     );
 
+    config.eslint = {
+      ...config.eslint,
+      ignoreDuringBuilds: true,
+    };
     return config;
   },
 });
