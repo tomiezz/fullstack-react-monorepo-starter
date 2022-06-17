@@ -1,11 +1,10 @@
 FROM node:16-alpine as build
-RUN npm i -g lerna
 WORKDIR /usr/src/frms
 COPY package.json yarn.lock lerna.json tsconfig.json ./
 COPY ./packages/shared ./packages/shared
 COPY ./packages/web ./packages/web
-RUN lerna bootstrap --scope=@frms/web --scope=@frms/shared
-RUN lerna exec --scope=@frms/web yarn build
+RUN yarn install
+RUN yarn workspace @frms/web run build
 
 FROM node:16-alpine 
 WORKDIR /usr/src/frms
