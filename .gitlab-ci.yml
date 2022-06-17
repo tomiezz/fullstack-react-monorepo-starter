@@ -28,7 +28,7 @@ build web:
         - "packages/shared/**/*"
   variables:
     IMG_NAME: "${CI_REGISTRY_IMAGE}/${WEB_IMG_NAME}"
-    DOCKER_FILE_PATH: "./docker/Dockerfile.base"
+    DOCKER_FILE_PATH: "./docker/Dockerfile.web"
   script:
     - chmod +x ./scripts/build-img.sh
     - ./scripts/build-img.sh
