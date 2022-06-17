@@ -9,18 +9,17 @@ stages:
 variables:
   BASE_IMG_NAME: "frms-base"
 
+before_script:
+  - chmod +x ./scripts/get-env.sh
+  - source ./scripts/get-env.sh
+
 .docker_authentication:
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
-.get_environment:
-  before_script:
-    - chmod +x ./scripts/get-env.sh
-    - source ./scripts/get-env.sh
-
 prepare_base_img:
   stage: prepare
-  extends: .docker_authentication .get_environment
+  extends: .docker_authentication
   rules:
     - if: $CI_COMMIT_BRANCH == "dev" || $CI_COMMIT_BRANCH == "stag" || $CI_COMMIT_TAG
       changes:
