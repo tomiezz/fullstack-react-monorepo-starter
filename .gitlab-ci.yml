@@ -73,3 +73,18 @@ deploy web:
   script:
     - chmod +x ./scripts/deploy.sh
     - ./scripts/deploy.sh
+
+deploy api:
+  stage: deploy
+  extends: .prepare_ssh_connection
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev" || $CI_COMMIT_BRANCH == "stag" || $CI_COMMIT_TAG
+      changes:
+        - "packages/api/**/*"
+        - "packages/shared/**/*"
+  variables:
+    IMG_NAME: "${CI_REGISTRY_IMAGE}/${API_IMG_NAME}"
+    GIT_STRATEGY: none
+  script:
+    - chmod +x ./scripts/deploy.sh
+    - ./scripts/deploy.sh
