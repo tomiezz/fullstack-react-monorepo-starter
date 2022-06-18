@@ -18,6 +18,15 @@ before_script:
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
 
+.prepare_ssh_connection:
+  before_script:
+    - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )"
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - ssh-keyscan -H $SSH_SERVER_IP >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
 build web:
   stage: build
   extends:
@@ -49,3 +58,18 @@ build api:
   script:
     - chmod +x ./scripts/build-img.sh
     - ./scripts/build-img.sh
+
+deploy web:
+  stage: deploy
+  extends: .prepare_ssh_connection
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev" || $CI_COMMIT_BRANCH == "stag" || $CI_COMMIT_TAG
+      changes:
+        - "packages/web/**/*"
+        - "packages/shared/**/*"
+  variables:
+    IMG_NAME: "${CI_REGISTRY_IMAGE}/${WEB_IMG_NAME}"
+    GIT_STRATEGY: none
+  script:
+    - chmod +x ./scripts/deploy.sh
+    - ./scripts/deploy.sh
