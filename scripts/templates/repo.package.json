@@ -1,0 +1,57 @@
+{
+  "name": "fullstack-react-monorepo-starter",
+  "version": "1.0.0",
+  "description": "A fullstack project based on JS stack such as react, react-native, express.js",
+  "main": "index.js",
+  "repository": "https://github.com/tomiezz/fullstack-react-monorepo-starter",
+  "author": "Tomiez",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint  . --ext .ts,.tsx,.js,.jsx --no-error-on-unmatched-pattern ",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --no-error-on-unmatched-pattern --quiet --fix",
+    "prettify": "prettier --write",
+    "prepare": "husky install",
+    "setup": "node ./scripts/setup.js"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "yarn prettify",
+      "yarn lint"
+    ]
+  },
+  "type": "module",
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "5.26.0",
+    "@typescript-eslint/parser": "5.26.0",
+    "eslint": "8.16.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "get-yarn-workspaces": "^1.0.2",
+    "husky": "^8.0.1",
+    "inquirer": "^9.0.0",
+    "lerna": "4.0.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "2.6.2",
+    "shelljs": "^0.8.5",
+    "typescript": "4.6.4"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/react",
+      "**/react-native",
+      "**/react-native-*",
+      "**/react-native/**",
+      "**/@react-native-*/*"
+    ]
+  }
+}
